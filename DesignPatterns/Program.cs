@@ -7,7 +7,8 @@ using System.Net;
 /// <summary>
 /// Single Responsability Principle
 /// -------------------------------
-/// Every class should have just a single reason to change
+/// A class should only have one reason to change
+/// Separation of concerns: different classes handling different, independent tasks/problems
 /// </summary>
 namespace DesignPatterns
 {

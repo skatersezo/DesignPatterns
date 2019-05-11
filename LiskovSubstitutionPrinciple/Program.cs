@@ -3,8 +3,7 @@
 /// <summary>
 /// The Liskov Substitution Principle
 /// ---------------------------------
-/// You should always be able to cast to your base type
-/// and the operation should be ok without breaking anything
+/// You should be able to substitute a base type for a subtype
 /// </summary>
 namespace LiskovSubstitutionPrinciple
 {

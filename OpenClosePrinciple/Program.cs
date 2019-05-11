@@ -3,8 +3,7 @@ using System.Collections.Generic;
 /// <summary>
 /// The Open-Close Principle
 /// ------------------------
-/// The Open-Close principle tells that classes should be open
-/// to extension but closed to modification.
+/// Classes should be open for extension but closed for modification
 /// </summary>
 namespace OpenClosePrinciple
 {

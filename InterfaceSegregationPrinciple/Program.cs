@@ -3,8 +3,8 @@
 /// <summary>
 /// Interface Segregation Principle
 /// -------------------------------
-/// When creating an interface, the user shouldn't implement
-/// methods that won't need
+/// Don't put too much into an interface; split into seperate intefaces
+/// YAGNI - You Ain't Going to Need It
 /// </summary>
 namespace InterfaceSegregationPrinciple
 {

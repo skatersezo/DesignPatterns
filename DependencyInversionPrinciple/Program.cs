@@ -6,9 +6,7 @@ using System.Net.Sockets;
 /// <summary>
 /// Dependency Inversion Principle
 /// ------------------------------
-/// It presents the idea that high level parts of the system
-/// should not depend on low level parts directly, instead
-/// they should depend on some kind of abstractions
+/// High-level modules should not depend upon low-level ones; use abstractions
 /// </summary>
 namespace DependencyInversionPrinciple
 {
@@ -36,11 +34,15 @@ namespace DependencyInversionPrinciple
     }
 
     // low-level
+    /// <summary>
+    /// By implementing the interface, the Relationships class
+    /// can alter the way it stores data because it's never access directly for the consumers
+    /// </summary>
     public class Relationships : IRelationshipBrowser 
     {
         // (Person from which the relationship stands, the relation itself, and the person which applies)
         private List<(Person, Relationship, Person)> relations = new List<(Person, Relationship, Person)>();
-
+       
         public void AddParentAndChild(Person parent, Person child)
         {
             relations.Add((parent, Relationship.Parent, child));
@@ -70,10 +72,11 @@ namespace DependencyInversionPrinciple
 //            }
 //        }
 
-        public Research(IRelationshipBrowser browser)
+        public Research(IRelationshipBrowser browser) // This way we get the same result without accesing the low level implementation
         {
             foreach (var p in browser.FindAllChildren("John"))
             {
+                // It looks better in terms of the API
                 Console.WriteLine($"John has a child called {p.Name}");
             }
         }

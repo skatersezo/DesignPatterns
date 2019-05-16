@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static Builder.Builder;
 
 namespace Builder
 {
@@ -33,6 +34,22 @@ namespace Builder
             var builder = new HtmlBuilder("ul");
             builder.AddChild("li", "hello").AddChild("li", "world"); ;
             Console.WriteLine(builder.ToString());
+
+            Console.ReadLine();
+
+            // -------------------------------------------------------------------------------
+
+            var pb = new PersonBuilder();
+            // The reason why we can jump from building the address to the employment info
+            // is because both, the address and the employment builder inherit from PersonBuilder
+            // so both of them expose every other builder
+            // A side effect is that you can do -> person.Lives.Lives.Lives...
+            Person person = pb.Lives.At("123 London Road").WithPostcode("SW12AC")
+                .Works.At("Acme").AsA("Coyote").Earning(23000);
+            // We've used two sub-builders to present an interface that is nice and convenient, but the object
+            // we built isn't a Person, it appears like PersonBuilder, to avoid that happen we use
+            // public static implicit operator Person(PersonBuilder pb) and return pb.person
+            Console.WriteLine(person.ToString());
 
             Console.ReadLine();
         }

@@ -36,6 +36,9 @@ namespace Builder
             }
         }
 
+        /// <summary>
+        /// Class to build a person job
+        /// </summary>
         public class PersonJobBuilder : PersonBuilder
         {
             public PersonJobBuilder(Person person)
@@ -62,6 +65,9 @@ namespace Builder
             }
         }
 
+        /// <summary>
+        ///  Class to build a person address
+        /// </summary>
         public class PersonAddressBuilder : PersonBuilder
         {
             public PersonAddressBuilder(Person person)

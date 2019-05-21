@@ -5,7 +5,7 @@ using System.Collections.Generic;
 /// ------------------------
 /// Classes should be open for extension but closed for modification
 /// </summary>
-namespace OpenClosePrinciple
+namespace OpenClosedPrinciple
 {
     public enum Color
     {

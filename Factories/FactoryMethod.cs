@@ -56,8 +56,7 @@ namespace Factories
             var point = Point2.Factory.NewPolarPoint(1.0, Math.PI / 2);
             Console.WriteLine(point);
 
-            // Task.Factory.StartNew(); // This is the factory method applied by .NET Framework
-            
+            // Task.Factory.StartNew(params); // This is the factory method applied by .NET Framework
         }
     }
 }

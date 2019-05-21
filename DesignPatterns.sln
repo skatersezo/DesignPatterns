@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder", "Builder\Builder.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Factories", "Factories\Factories.csproj", "{4578D3F1-483D-4835-865B-AC00FAB612FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototype", "Prototype\Prototype.csproj", "{6BC595E7-953A-40F3-80F5-28EEF8214A10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prototype", "Prototype\Prototype.csproj", "{6BC595E7-953A-40F3-80F5-28EEF8214A10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton", "Singleton\Singleton.csproj", "{60DD58CC-A997-4346-B504-CAA472B5CD50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{6BC595E7-953A-40F3-80F5-28EEF8214A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BC595E7-953A-40F3-80F5-28EEF8214A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BC595E7-953A-40F3-80F5-28EEF8214A10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60DD58CC-A997-4346-B504-CAA472B5CD50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60DD58CC-A997-4346-B504-CAA472B5CD50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60DD58CC-A997-4346-B504-CAA472B5CD50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60DD58CC-A997-4346-B504-CAA472B5CD50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

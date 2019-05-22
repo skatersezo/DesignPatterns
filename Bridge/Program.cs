@@ -1,4 +1,5 @@
 ﻿using System;
+using Autofac;
 
 /// <summary>
 /// Bridge Pattern
@@ -6,6 +7,7 @@
 /// It is a structural design pattern.
 /// A mechanism that decouples an interface (hierarchy) from
 /// an implementation (hierarchy).
+/// It is considered as a stronger form of encapsulation.
 /// </summary>
 namespace Bridge
 {
@@ -77,12 +79,28 @@ namespace Bridge
         static void Main(string[] args)
         {
             // IRenderer renderer = new RasterRenderer();
-            var renderer = new VectorRenderer();
-            var circle = new Circle(renderer, 5); // here we see the connection between the shape and the renderer
+//            var renderer = new VectorRenderer();
+//            var circle = new Circle(renderer, 5); // here we see the connection between the shape and the renderer
+//
+//            circle.Draw();
+//            circle.Resize(2);
+//            circle.Draw();
 
-            circle.Draw();
-            circle.Resize(2);
-            circle.Draw();
+            // example with DI factory
+            var cb = new ContainerBuilder();
+            cb.RegisterType<VectorRenderer>()
+                .As<IRenderer>()
+                .SingleInstance(); // we need just one renderer for all the objects
+            cb.Register((c, p) => new Circle(c.Resolve<IRenderer>(),
+                p.Positional<float>(0))); // the radius is an argument we want to provide later on, not when registering in the container
+
+            using (var c = cb.Build())
+            {
+                var circle = c.Resolve<Circle>(new PositionalParameter(0, 5.0f));
+                circle.Draw();
+                circle.Resize(7.0f);
+                circle.Draw();
+            }
 
             Console.ReadLine();
         }
